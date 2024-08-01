@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex align-items-center justify-content-center">
+  <div class="w-full flex align-items-center justify-content-center pl-3 pr-3">
     <Timeline
       :value="events"
       layout="horizontal"
