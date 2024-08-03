@@ -17,6 +17,15 @@
           <div>
             <div>
               <h3 class="text-left">Experience:</h3>
+              <p class="text-left w-6">
+                I am a Senior Full Stack Engineer and Data Scientist with
+                extensive experience working on DARPA and IARPA contracts. My
+                expertise spans a diverse range of applications, from leveraging
+                AI for Forensic Linguistics to enhancing spectral imagery with
+                advanced AI techniques. Additionally, I have a strong background
+                in designing and implementing horizontal scaling architecture to
+                ensure robust and efficient system performance.
+              </p>
               <div class="flex flex-column">
                 <div class="flex flex-row w-full h-6rem container p-3 mb-3">
                   <h3 class="text-left">Front Ends</h3>
@@ -170,6 +179,7 @@ const container = ref();
 
 const onIndex = (idx: number) => {
   console.log(container.value);
+  index.value = idx;
   container.value.scrollTo({
     left: idx * window.innerWidth,
     top: 0,
@@ -204,10 +214,12 @@ nav a.router-link-exact-active {
 
 .slide {
   width: 80vw;
-
+  max-width: 1064px;
   margin-left: 10vw;
   margin-right: 10vw;
   min-height: 70vh;
+  animation: squash 1s;
+  animation-timing-function: ease-in-out;
 }
 
 .width-80 {
@@ -261,7 +273,22 @@ nav a.router-link-exact-active {
 }
 
 .container {
-  background: var(--p-surface-600);
+  background: var(--p-surface-800);
   border-radius: var(--p-card-border-radius);
+}
+
+@keyframes squash {
+  0% {
+    transform: scaleY(1);
+  }
+  20% {
+    transform: scaleY(0.8);
+  }
+  80% {
+    transform: scaleY(0.8);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 </style>
