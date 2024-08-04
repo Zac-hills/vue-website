@@ -2,34 +2,37 @@
   <div class="h-screen w-screen flex flex-column overflow-hidden no-scrollbar">
     <TimelineVisual @index="onIndex" />
     <div class="flex flex-row overflow-auto no-scrollbar">
-      <AboutSlide />
-      <div class="flex flex-column overflow-y-auto overflow-x-hidden no-scrollbar" ref="container">
-      <LeadLagSlide />
-      <AnimatedSlide class="slide height-fit-content" :key="index">
-        <template #header>
-          <img src="/leadlag-header.png" class="max-width-80" />
-        </template>
-        <template #content>
-          <p>Slide 2 content</p>
-        </template>
-      </AnimatedSlide>
-      <AnimatedSlide class="slide height-fit-content" :key="index">
-        <template #header>
-          <img src="/leadlag-header.png" class="max-width-80" />
-        </template>
-        <template #content>
-          <p>Slide 3 content</p>
-        </template>
-      </AnimatedSlide>
-      <AnimatedSlide class="slide height-fit-content" :key="index">
-        <template #header>
-          <img src="/leadlag-header.png" class="max-width-80" />
-        </template>
-        <template #content>
-          <p>Slide 4 content</p>
-        </template>
-      </AnimatedSlide>
-    </div>
+      <AboutSlide ref="slide1" />
+      <div
+        class="flex flex-column overflow-y-auto overflow-x-hidden no-scrollbar"
+        ref="container"
+      >
+        <LeadLagSlide ref="slide2" />
+        <AnimatedSlide class="slide height-fit-content" :key="index">
+          <template #header>
+            <img src="/leadlag-header.png" class="max-width-80" />
+          </template>
+          <template #content>
+            <p>Slide 2 content</p>
+          </template>
+        </AnimatedSlide>
+        <AnimatedSlide class="slide height-fit-content" :key="index">
+          <template #header>
+            <img src="/leadlag-header.png" class="max-width-80" />
+          </template>
+          <template #content>
+            <p>Slide 3 content</p>
+          </template>
+        </AnimatedSlide>
+        <AnimatedSlide class="slide height-fit-content" :key="index">
+          <template #header>
+            <img src="/leadlag-header.png" class="max-width-80" />
+          </template>
+          <template #content>
+            <p>Slide 4 content</p>
+          </template>
+        </AnimatedSlide>
+      </div>
     </div>
   </div>
 </template>
@@ -37,21 +40,41 @@
 <script lang="ts" setup>
 import TimelineVisual from "./components/TimelineVisual.vue";
 import AnimatedSlide from "./components/AnimatedSlide.vue";
-import { ref } from "vue";
+import { Ref, ref } from "vue";
 import AboutSlide from "./components/AboutSlide.vue";
 import LeadLagSlide from "./components/LeadLagSlide.vue";
 
 const index = ref(0);
 const container = ref();
+const slide1 = ref<InstanceType<typeof AboutSlide>>();
+const slide2 = ref<InstanceType<typeof LeadLagSlide>>();
+const slide3 = ref<InstanceType<typeof AboutSlide>>();
+const slide4 = ref<InstanceType<typeof AboutSlide>>();
 
 const onIndex = (idx: number) => {
-  console.log(container.value);
+  const slide = getSlideRef(idx);
+  if (!slide) return;
+  console.log(slide.$el);
   index.value = idx;
   container.value.scrollTo({
-    left: idx * window.innerWidth,
-    top: 0,
+    top: slide.$el.offsetTop,
     behavior: "smooth",
   });
+};
+
+const getSlideRef = (index: number) => {
+  switch (index) {
+    case 0:
+      return slide1.value;
+    case 1:
+      return slide2.value;
+    case 2:
+      return slide3.value;
+    case 3:
+      return slide4.value;
+    default:
+      return null;
+  }
 };
 </script>
 <style>
