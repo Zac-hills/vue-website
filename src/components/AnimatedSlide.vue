@@ -1,21 +1,40 @@
 <template>
-  <Card>
-    <template #header>
+  <div class="flex flex-column flex-auto flex-basis slide" @click="handleClick">
       <slot name="header"></slot>
-    </template>
-    <template #content>
+      <div :class="showClass">
       <slot name="content"></slot>
-    </template>
-    <template #footer>
       <slot name="footer"></slot>
-    </template>
-  </Card>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import Card from "primevue/card";
+import { computed, ref, withDefaults, defineProps } from 'vue';
 
+interface Props {
+  canToggle?: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {canToggle: false});
+const isOpen = ref(false);
+const showClass = computed(() => {
+  return isOpen.value ? "" : "hidden"
+})
 const handleClick = () => {
-  console.log("clicked");
+  if(!props.canToggle) {
+    return;
+  }
+  isOpen.value = !isOpen.value;
 };
+
 </script>
+<style scoped>
+  .slide {
+    background-color: #161B22;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-left: 5rem;
+    width: 42.5vw;
+    margin-bottom: 3rem;
+  }
+</style>
