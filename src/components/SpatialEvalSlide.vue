@@ -3,13 +3,12 @@
     <AnimatedSlide canToggle>
       <template #header>
         <iframe
-          width="560"
-          height="315"
           src="https://www.youtube.com/embed/4phJmMGCcCc?si=wjv8hHp28j9KFQCa&amp;controls=0"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
+          class="aspect"
           allowfullscreen
         ></iframe>
       </template>
@@ -77,3 +76,9 @@
 <script lang="ts" setup>
 import AnimatedSlide from "@/components/AnimatedSlide.vue";
 </script>
+
+<style scoped>
+.aspect {
+  aspect-ratio: 16 / 9;
+}
+</style>

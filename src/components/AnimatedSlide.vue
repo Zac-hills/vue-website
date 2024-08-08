@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-row">
-    <div class="pt-3">
+    <div class="pt-6">
       <div
         class="flex flex-column flex-auto flex-basis slide"
         @click="handleClick"

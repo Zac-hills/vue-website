@@ -1,23 +1,51 @@
 <template>
   <div class="h-screen w-screen flex flex-column overflow-hidden no-scrollbar">
-    <div class="flex flex-row justify-content-center no-scrollbar">
-      <AboutSlide />
+    <div
+      class="flex flex-row justify-content-center no-scrollbar overflow-hidden"
+    >
+      <div class="slide flex align-items-center pr-5vw overflow-hidden">
+        <div>
+          <div class="flex justify-content-between">
+            <h1 class="text-left p-3">Zachary Hills, BIT, MSc</h1>
+            <div class="p-3 flex align-items-center">
+              <i class="pi pi-github p-3"></i>
+              <i class="pi pi-linkedin p-3"></i>
+            </div>
+          </div>
+          <Divider />
+          <h3 class="text-left">Experience:</h3>
+          <p class="text-left w-8 pl-3">
+            I am a Senior Full Stack Engineer and Data Scientist with extensive
+            experience working on DARPA and IARPA contracts. My expertise spans
+            a diverse range of applications, from leveraging AI for Forensic
+            Linguistics to enhancing spectral imagery with advanced AI
+            techniques. Additionally, I have a strong background in designing
+            and implementing horizontal scaling architecture to ensure robust
+            and efficient system performance.
+          </p>
+        </div>
+      </div>
       <div
-        class="flex flex-column overflow-y-auto overflow-x-hidden no-scrollbar"
+        class="flex flex-column overflow-y-auto overflow-x-hidden no-scrollbar mb-6"
         ref="container"
       >
-        <LeadLagSlide isTop />
+        <LeadLagSlide />
+        <DistilSlide class="border-right" />
+        <SignatureSlide class="border-right" />
         <SpatialEvalSlide class="border-right" />
+        <TiedInKnotsSlide class="border-right" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import AnimatedSlide from "./components/AnimatedSlide.vue";
-import AboutSlide from "./components/AboutSlide.vue";
+import SignatureSlide from "./components/SignatureSlide.vue";
 import LeadLagSlide from "./components/LeadLagSlide.vue";
 import SpatialEvalSlide from "./components/SpatialEvalSlide.vue";
+import TiedInKnotsSlide from "./components/TiedInKnotsSlide.vue";
+import DistilSlide from "./components/DistilSlide.vue";
+import Divider from "primevue/divider";
 </script>
 <style>
 #app {
@@ -87,6 +115,10 @@ import SpatialEvalSlide from "./components/SpatialEvalSlide.vue";
 
 .height-fit-content {
   height: fit-content;
+}
+
+.pr-5vw {
+  padding-right: 5vw;
 }
 
 @media (max-width: 768px) {
