@@ -1,5 +1,5 @@
 <template>
-  <AnimatedSlide>
+  <AnimatedSlide isTop canToggle>
     <template #header>
       <video controls>
         <source src="signature.mp4" type="video/mp4" />

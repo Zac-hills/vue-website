@@ -1,11 +1,11 @@
 <template>
   <div>
-    <AnimatedSlide :canToggle="true" isTop>
+    <AnimatedSlide :canToggle="true">
       <template #header>
         <img src="/leadlag-header.png" class="max-width-40" />
       </template>
       <template #content>
-        <div class="blog-post-wrapper">
+        <div class="text-left p-3">
           <h2>Consilium Maps</h2>
           <p class="text">
             Consilium Maps is a data exploratory tool based on the lead-lag
@@ -64,3 +64,9 @@
 <script lang="ts" setup>
 import AnimatedSlide from "@/components/AnimatedSlide.vue";
 </script>
+
+<style scoped>
+.text-left {
+  text-align: left;
+}
+</style>

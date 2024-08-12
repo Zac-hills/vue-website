@@ -29,11 +29,12 @@
         class="flex flex-column overflow-y-auto overflow-x-hidden no-scrollbar mb-6"
         ref="container"
       >
-        <LeadLagSlide />
+        <SignatureSlide />
+        <TerrorarriumSlide class="border-right" />
         <DistilSlide class="border-right" />
-        <SignatureSlide class="border-right" />
         <SpatialEvalSlide class="border-right" />
         <TiedInKnotsSlide class="border-right" />
+        <LeadLagSlide />
       </div>
     </div>
   </div>
@@ -45,6 +46,7 @@ import LeadLagSlide from "./components/LeadLagSlide.vue";
 import SpatialEvalSlide from "./components/SpatialEvalSlide.vue";
 import TiedInKnotsSlide from "./components/TiedInKnotsSlide.vue";
 import DistilSlide from "./components/DistilSlide.vue";
+import TerrorarriumSlide from "./components/TerrorarriumSlide.vue";
 import Divider from "primevue/divider";
 </script>
 <style>
