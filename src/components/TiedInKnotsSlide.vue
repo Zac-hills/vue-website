@@ -1,5 +1,5 @@
 <template>
-  <AnimatedSlide>
+  <AnimatedSlide year="2019" canToggle>
     <template #header>
       <iframe
         src="https://vialab.github.io/tied-in-knots/#/"

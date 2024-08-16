@@ -8,8 +8,11 @@
           <div class="flex justify-content-between">
             <h1 class="text-left p-3">Zachary Hills, BIT, MSc</h1>
             <div class="p-3 flex align-items-center">
-              <i class="pi pi-github p-3"></i>
-              <i class="pi pi-linkedin p-3"></i>
+              <a class="pi pi-github p-3" href="https://github.com/Zac-hills" />
+              <a
+                class="pi pi-linkedin p-3"
+                href="https://www.linkedin.com/in/zachary-hills-031333185/?originalSubdomain=ca"
+              />
             </div>
           </div>
           <Divider />
@@ -32,9 +35,9 @@
         <SignatureSlide />
         <TerrorarriumSlide class="border-right" />
         <DistilSlide class="border-right" />
-        <SpatialEvalSlide class="border-right" />
         <TiedInKnotsSlide class="border-right" />
-        <LeadLagSlide />
+        <LeadLagSlide class="border-right" />
+        <SpatialEvalSlide class="border-right" />
       </div>
     </div>
   </div>
@@ -138,18 +141,18 @@ import Divider from "primevue/divider";
   border-radius: var(--p-card-border-radius);
 }
 
-@keyframes squash {
-  0% {
-    transform: scaleY(1);
-  }
-  20% {
-    transform: scaleY(0.8);
-  }
-  80% {
-    transform: scaleY(0.8);
-  }
-  100% {
-    transform: scaleY(1);
-  }
+a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:active {
+  color: #fff;
+  text-decoration: none;
 }
 </style>

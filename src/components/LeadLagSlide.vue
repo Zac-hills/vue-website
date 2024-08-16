@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AnimatedSlide :canToggle="true">
+    <AnimatedSlide :canToggle="true" year="2019">
       <template #header>
         <img src="/leadlag-header.png" class="max-width-40" />
       </template>

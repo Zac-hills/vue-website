@@ -1,5 +1,5 @@
 <template>
-  <AnimatedSlide isTop canToggle>
+  <AnimatedSlide isTop canToggle year="2024">
     <template #header>
       <video controls>
         <source src="signature.mp4" type="video/mp4" />

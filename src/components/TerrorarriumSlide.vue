@@ -1,5 +1,5 @@
 <template>
-  <AnimatedSlide canToggle>
+  <AnimatedSlide canToggle year="2023">
     <template #header>
       <img src="/terrorarium.png" />
     </template>

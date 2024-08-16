@@ -1,30 +1,39 @@
 <template>
   <div class="flex flex-row">
     <div class="pt-6">
-      <div
-        class="flex flex-column flex-auto flex-basis slide"
-        @click="handleClick"
-      >
+      <div class="flex flex-column flex-auto flex-basis slide">
         <slot name="header"></slot>
+        <Button
+          class="border-noround-top"
+          :label="showClass ? 'Read More' : 'Read Less'"
+          @click="handleClick"
+        />
         <div :class="showClass">
           <slot name="content"></slot>
           <slot name="footer"></slot>
         </div>
       </div>
     </div>
-    <div class="text">2020</div>
+    <div class="text flex" :class="{ 'flex-column-reverse': isBottom }">
+      {{ props.year }}
+    </div>
 
-    <div class="dash flex flex-grow" :class="{ 'border-right': isTop }"></div>
+    <div
+      class="flex flex-grow"
+      :class="{ 'border-right': isTop, bottom: isBottom, dash: !isBottom }"
+    ></div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed, ref, withDefaults, defineProps } from "vue";
+import Button from "primevue/button";
 
 interface Props {
   canToggle?: boolean;
   isTop?: boolean;
   isBottom?: boolean;
+  year?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -52,7 +61,6 @@ const handleClick = () => {
 }
 .border-right {
   border-right: 1px solid #fff;
-  border-top-right-radius: 3px;
 }
 .dash {
   margin-top: 0.5rem;
@@ -63,7 +71,15 @@ const handleClick = () => {
   -moz-box-sizing: content-box; /* Firefox, other Gecko */
   box-sizing: content-box; /* Opera/IE 8+ */
 }
-
+.bottom {
+  margin-top: 0.5rem;
+  border-bottom: 1px solid #fff;
+  width: 1rem;
+  margin-left: 1rem;
+  -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: content-box; /* Firefox, other Gecko */
+  box-sizing: content-box; /* Opera/IE 8+ */
+}
 .text {
   padding-left: 1rem;
 }

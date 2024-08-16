@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AnimatedSlide canToggle>
+    <AnimatedSlide canToggle year="2018" isBottom>
       <template #header>
         <iframe
           src="https://www.youtube.com/embed/4phJmMGCcCc?si=wjv8hHp28j9KFQCa&amp;controls=0"
