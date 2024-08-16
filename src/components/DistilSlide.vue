@@ -5,7 +5,7 @@
     </template>
     <template #content>
       <div class="text-left p-3">
-        <h1>Distil: A Mixed-Initiative Model Discovery System</h1>
+        <h2>Distil - Software Engineer</h2>
         <p>
           Distil is a sophisticated tool designed to assist subject matter
           experts in generating data-driven models through a mixed-initiative
