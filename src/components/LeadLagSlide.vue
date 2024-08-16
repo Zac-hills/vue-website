@@ -26,7 +26,8 @@
             <img
               src="/leadlag-scrubber.png"
               alt="Scrubber interface displaying a portion of Canada's research data. Users can interact with and resize this tool to view different time spans of data, which helps in analyzing trends and areas of interest."
-            />
+              class="p-2"
+              />
           </p>
           <p class="text">
             Event graphs highlight regions with the most significant lead, lag,
@@ -36,7 +37,8 @@
             <img
               src="/leadlag-events.png"
               alt="Event graphs showcasing regions with the highest lead and lag in research output. The graphs also highlight regions with the most participating countries, providing an overview of global research trends."
-            />
+              class="p-2"
+              />
           </p>
           <p class="text">
             After selecting a timespan, users can view individual institutions'
@@ -47,6 +49,7 @@
             <img
               src="/leadlag-nodes.png"
               alt="Map showing individual institutions with nodes indicating their research output relative to Canada. Each node’s color represents lead or lag status, and the trend line displays changes in output over the selected timespan."
+              class="w-full p-2"
             />
           </p>
           <p class="text">
@@ -69,4 +72,6 @@ import AnimatedSlide from "@/components/AnimatedSlide.vue";
 .text-left {
   text-align: left;
 }
+
+.max-width-20 {}
 </style>

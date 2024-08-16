@@ -41,7 +41,7 @@
             accuracy of the network. However, once the network is fully trained
             and the parameters are tuned there must be a better way to help
             developers understand the limitations of the network.
-            <img src="/spatial_visual.png" />
+            <img src="/spatial_visual.png" class="p-3 w-full"/>
             This project uses unmanned aerial vehicles to circle the object
             logging the images and spatial data relative to the object. The
             result is a detailed visual analysis of the spatial limitations of
@@ -63,7 +63,7 @@
             degree is true north. The object's front should face true north to
             better calculate the angle of incidence relative to the object's
             rotation, for objects that are symmetrical this is not mandatory.
-            <img src="/visualmodel.PNG" />
+            <img src="/visualmodel.PNG" class="p-3 w-full img-aspect" />
           </p>
           <p>
             In conclusion this work is an approach to help engineers be informed
@@ -85,5 +85,9 @@ import AnimatedSlide from "@/components/AnimatedSlide.vue";
 <style scoped>
 .aspect {
   aspect-ratio: 16 / 9;
+}
+
+.img-aspect {
+  aspect-ratio: 1.24;
 }
 </style>
