@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-row">
     <div class="pt-6">
-      <div class="flex flex-column flex-auto flex-basis slide">
+      <div
+        class="flex flex-column flex-auto flex-basis slide"
+        :style="`width:${$isMobile() ? '80.5vw' : '42.5vw'};`"
+      >
         <slot name="header"></slot>
         <Button
           class="border-noround-top"
@@ -56,12 +59,13 @@ const handleClick = () => {
 .slide {
   background-color: #161b22;
   border-radius: 1rem;
-  width: 42.5vw;
   max-width: 1046px;
 }
+
 .border-right {
   border-right: 1px solid #fff;
 }
+
 .dash {
   margin-top: 0.5rem;
   border-top: 1px solid #fff;
@@ -71,6 +75,7 @@ const handleClick = () => {
   -moz-box-sizing: content-box; /* Firefox, other Gecko */
   box-sizing: content-box; /* Opera/IE 8+ */
 }
+
 .bottom {
   margin-top: 0.5rem;
   border-bottom: 1px solid #fff;
