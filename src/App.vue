@@ -1,6 +1,7 @@
 <template>
   <div class="h-screen w-screen flex flex-column overflow-hidden no-scrollbar">
     <div
+      v-if="!$isMobile()"
       class="flex flex-row justify-content-center no-scrollbar overflow-hidden"
     >
       <div class="slide flex align-items-center pr-5vw overflow-hidden">
@@ -40,7 +41,38 @@
         <SpatialEvalSlide class="border-right" />
       </div>
     </div>
-  </div>
+    <div v-else class="overflow-y-auto">
+      <div class="mb-3">
+          <div class="flex justify-content-between">
+            <h1 class="text-left p-3">Zachary Hills, BIT, MSc</h1>
+            <div class="p-3 flex align-items-center">
+              <a class="pi pi-github p-3" href="https://github.com/Zac-hills" />
+              <a
+                class="pi pi-linkedin p-3"
+                href="https://www.linkedin.com/in/zachary-hills-031333185/?originalSubdomain=ca"
+              />
+            </div>
+          </div>
+          <Divider />
+          <h3 class="text-left">Experience:</h3>
+          <p class="text-left p-3">
+            I am a Senior Full Stack Engineer and Data Scientist with extensive
+            experience working on DARPA and IARPA contracts. My expertise spans
+            a diverse range of applications, from leveraging AI for Forensic
+            Linguistics to enhancing spectral imagery with advanced AI
+            techniques. Additionally, I have a strong background in designing
+            and implementing horizontal scaling architecture to ensure robust
+            and efficient system performance.
+          </p>
+        </div>
+        <SignatureSlide />
+        <TerrorarriumSlide class="border-right" />
+        <DistilSlide class="border-right" />
+        <TiedInKnotsSlide class="border-right" />
+        <LeadLagSlide class="border-right" />
+        <SpatialEvalSlide class="border-right" />
+      </div>
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -51,6 +83,7 @@ import TiedInKnotsSlide from "./components/TiedInKnotsSlide.vue";
 import DistilSlide from "./components/DistilSlide.vue";
 import TerrorarriumSlide from "./components/TerrorarriumSlide.vue";
 import Divider from "primevue/divider";
+
 </script>
 <style>
 #app {
