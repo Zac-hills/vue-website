@@ -11,7 +11,7 @@
           :label="showClass ? 'Read More' : 'Read Less'"
           @click="handleClick"
         />
-        <div :class="showClass">
+        <div :class="showClass" class="transition-ease">
           <slot name="content"></slot>
           <slot name="footer"></slot>
         </div>
@@ -44,9 +44,10 @@ const props = withDefaults(defineProps<Props>(), {
   isTop: false,
   isBottom: false,
 });
+
 const isOpen = ref(false);
 const showClass = computed(() => {
-  return isOpen.value ? "" : "hidden";
+  return isOpen.value ? "show-text" : "hide-text";
 });
 const handleClick = () => {
   if (!props.canToggle) {
@@ -85,7 +86,22 @@ const handleClick = () => {
   -moz-box-sizing: content-box; /* Firefox, other Gecko */
   box-sizing: content-box; /* Opera/IE 8+ */
 }
+
+.hide-text {
+  visibility: hidden;
+  max-height: 0px;
+}
+
+.show-text {
+  visibility: visible;
+  max-height: 20000px;
+}
+
 .text {
   padding-left: 1rem;
+}
+
+.transition-ease {
+  transition: all 1s ease-out;
 }
 </style>
