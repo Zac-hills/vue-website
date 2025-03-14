@@ -9,6 +9,8 @@ import "primeicons/primeicons.css";
 import VueMobileDetection from "vue-mobile-detection";
 
 createApp(App)
-  .use(PrimeVue, { theme: { preset: Aura } })
+  .use(PrimeVue, { theme: { preset: Aura, options: {
+    darkModeSelector: '.my-app-dark',
+}}})
   .use(VueMobileDetection)
   .mount("#app");
