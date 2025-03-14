@@ -1,10 +1,14 @@
 <template>
   <AnimatedSlide canToggle year="2024">
     <template #header>
-      <video controls>
-        <source src="signature.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <iframe width="560" 
+      class="aspect"
+      src="https://www.youtube.com/embed/cf9MYkML53E?si=EfT6HIDI7DMup9SC" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen></iframe>
     </template>
     <template #content>
       <div class="text-left p-3">
@@ -52,4 +56,8 @@ import AnimatedSlide from "@/components/AnimatedSlide.vue";
 .text-left {
   text-align: left;
 }
+.aspect {
+  aspect-ratio: 16 / 9;
+}
+
 </style>

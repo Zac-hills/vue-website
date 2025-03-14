@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen flex flex-column overflow-hidden no-scrollbar">
+  <div class="h-screen w-screen flex flex-column overflow-hidden no-scrollbar background-black">
     <div
       v-if="!$isMobile()"
       class="flex flex-row justify-content-center no-scrollbar overflow-hidden"
@@ -96,6 +96,9 @@ import Divider from "primevue/divider";
 }
 </style>
 <style scoped>
+.background-black {
+  background-color: #000000;
+}
 .container {
   min-width: 0px;
 }
